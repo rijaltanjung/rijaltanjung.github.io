@@ -32,6 +32,7 @@
         el.addEventListener('scroll', listener)
     };
 
+    // Navbar links active on scroll
     let navbarlinks = select('#navbar .scrollto', true);
     const navbarlinksActive = () => {
         let position = window.scrollY + 200
@@ -60,21 +61,6 @@
         })
     }
 
-    // Typing effect
-    const targetTyped = select('.typed');
-    if (targetTyped) {
-        let typed_strings = targetTyped.getAttribute('data-typed-items')
-        typed_strings = typed_strings.split(',')
-
-        new Typed('.typed', {
-            strings: typed_strings,
-            loop: true,
-            typeSpeed: 100,
-            backSpeed: 50,
-            backDelay: 2000
-        })
-    }
-
     // Mobile nav toggle
     on('click', '.mobile-nav-toggle', function (e) {
         select('body').classList.toggle('mobile-nav-active')
@@ -98,6 +84,30 @@
             scrollto(this.hash)
         }
     }, true)
+
+    // Scroll with offset on page load with hash links in the url
+    window.addEventListener('load', () => {
+        if (window.location.hash) {
+            if (select(window.location.hash)) {
+                scrollto(window.location.hash)
+            }
+        }
+    })
+
+    // Typing effect
+    const targetTyped = select('.typed');
+    if (targetTyped) {
+        let typed_strings = targetTyped.getAttribute('data-typed-items')
+        typed_strings = typed_strings.split(',')
+
+        new Typed('.typed', {
+            strings: typed_strings,
+            loop: true,
+            typeSpeed: 100,
+            backSpeed: 50,
+            backDelay: 2000
+        })
+    }
 
     // Scroll with offset on page load with hash links in the url
     window.addEventListener('load', () => {
