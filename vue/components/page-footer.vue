@@ -21,7 +21,7 @@
               </a>
             </li>
             <li class="list-inline-item">
-              <a href="https://github.com/devrijal" target="_blank">
+              <a href="https://github.com/rijaltanjung/rijaltanjung.github.io" target="_blank">
                 <span class="fa-stack fa-lg">
                     <i class="fas fa-circle fa-stack-2x"></i>
                     <i class="fab fa-github fa-stack-1x fa-inverse"></i>

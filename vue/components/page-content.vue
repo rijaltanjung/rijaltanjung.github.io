@@ -20,6 +20,7 @@
           <content-post-html-audio v-else-if="content === 'post-html-audio'"></content-post-html-audio>
           <content-post-html-form v-else-if="content === 'post-html-form'"></content-post-html-form>
           <content-post-html-list v-else-if="content === 'post-html-list'"></content-post-html-list>
+          <page-button-back></page-button-back>
         </div>
       </div>
     </div>
@@ -37,10 +38,8 @@ module.exports = {
       index: 'content-index.vue'
     }
   },
-  mounted() {
-
-  },
   components: {
+    'page-button-back': httpVueLoader(`./../components/page-button-back.vue`),
     'content-index': httpVueLoader(`./../contents/content-index.vue`),
     'content-about': httpVueLoader(`./../contents/content-about.vue`),
     'content-contact': httpVueLoader(`./../contents/content-contact.vue`),
